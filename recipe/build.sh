@@ -12,6 +12,8 @@ if [[ ${target_platform} =~ .*osx.* ]]; then
     export PKG_CONFIG_PATH="${SRC_DIR}/pkgconfig:${PREFIX}/lib/pkgconfig"
 fi
 
+export ac_cv_file_src_pixz_1=yes > ${SRC_DIR}/config.site
+
 autoreconf --force --verbose --install
 ./configure --disable-debug \
     --disable-dependency-tracking \
